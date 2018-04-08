@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "WeatherInterfaceImplService", targetNamespace = "http://server.ws.xuzhiqing.xin/", wsdlLocation = "http://localhost:1997/weather?WSDL")
+@WebServiceClient(name = "WeatherInterfaceImplService", targetNamespace = "http://server.ws.xuzhiqing.xin/", wsdlLocation = "http://localhost:54321/weather?WSDL")
 public class WeatherInterfaceImplService
     extends Service
 {
@@ -30,7 +30,7 @@ public class WeatherInterfaceImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:1997/weather?WSDL");
+            url = new URL("http://localhost:54321/weather?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
