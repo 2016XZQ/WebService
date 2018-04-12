@@ -1,5 +1,7 @@
 package com.black.tea.cxf.server;
 
+import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 
 public class WeatherServer {
@@ -11,6 +13,9 @@ public class WeatherServer {
         jaxWsServerFactoryBean.setServiceBean(new WeatherInterfaceImpl() );
         //设置服务地址
         jaxWsServerFactoryBean.setAddress("http://127.0.0.1:1997/weather");
+        //加入拦截器
+        jaxWsServerFactoryBean.getInInterceptors().add(new LoggingInInterceptor());
+        jaxWsServerFactoryBean.getOutInterceptors().add(new LoggingOutInterceptor());
         //发布
         jaxWsServerFactoryBean.create();
     }
